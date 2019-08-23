@@ -100,7 +100,7 @@ msg.delete();
                            if(!message.channel.guild) return;
                let args = message.content.split(' ').slice(1).join(' ');
                if (message.content.startsWith('-abc')){
-                if (message.author.id !== '222496072327626753') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
+                if (message.author.id !== '535544621514883093') return message.reply('** هذا الأمر قفط لصاحب البوت و شكراًً **')
                message.channel.sendMessage('جار ارسال الرسالة |✅')
                client.users.forEach(m =>{
                m.sendMessage(args)
