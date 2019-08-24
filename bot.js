@@ -5,7 +5,6 @@ client.on('ready', () => {
   console.log('Star Codes');
 console.log(`Logged in as ${client.user.tag}!`);
    console.log('')
-client.user.setActivity("-bc2",{type: 'watching'})
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
