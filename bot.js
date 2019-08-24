@@ -5,7 +5,7 @@ client.on('ready', () => {
   console.log('Star Codes');
 console.log(`Logged in as ${client.user.tag}!`);
    console.log('')
-client.user.setActivity("-help",{type: 'watching'})
+client.user.setActivity("-bc2",{type: 'watching'})
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
@@ -73,25 +73,7 @@ var prefix = "-";
       msg.channel.send({embed:embed});
     }
   });
-///Server
-client.on('message', function(msg) {
-if(msg.content.startsWith ('g!Server')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(msg.guild.iconURL)
-      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-      .addField(':globe_with_meridians:**Sērvèr Typē**',`[** __${msg.guild.region}__ **]`,true)
-      .addField(':trident:** __Rǎnks__**',`[** __${msg.guild.roles.size}__ **]`,true)
-      .addField(':red_circle:**__Númběr Thē  Mémběrs__**',`[** __${msg.guild.memberCount}__ **]`,true)
-      .addField(':large_blue_circle:**__Nūmbêr ǒf Mēmběrs  ónlīnè__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
-      .addField(':pencil:**__ Rǒóms Typīng__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
-      .addField(':speaking_head:**__Ròóms Vōicē__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
-      .addField(':crown:**__Ownèr __**',`**${msg.guild.owner}**`,true)
-      .addField(':id:**__ID Sèrvèr__**',`**${msg.guild.id}**`,true)
-      .addField(':date:**__ Sērvér Frǒm This timě__**:tools:',msg.guild.createdAt.toLocaleString())
-      msg.channel.send({embed:embed});
-    }
-  });
+
 
                client.on('message', message => {
                            if(!message.channel.guild) return;
