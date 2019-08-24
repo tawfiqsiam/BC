@@ -69,10 +69,7 @@ var prefix = "-";
 });
 
 
-      msg.channel.send({embed:embed});
-    }
-  });
-
+      
 
                client.on('message', message => {
                            if(!message.channel.guild) return;
