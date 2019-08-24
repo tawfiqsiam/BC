@@ -4,8 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
   console.log('Star Codes');
 console.log(`Logged in as ${client.user.tag}!`);
- client.user.setActivity("",{type: 'watching'})
-  console.log('')
+   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
@@ -28,6 +27,7 @@ console.log(`Logged in as ${client.user.tag}!`);
   console.log('')
 });
 });
+
 client.on('message',async message => {
   if(message.author.bot || message.channel.type === '-bc1') return;
   let args = message.content.split(' ');
