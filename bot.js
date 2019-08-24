@@ -5,6 +5,7 @@ client.on('ready', () => {
   console.log('Star Codes');
 console.log(`Logged in as ${client.user.tag}!`);
    console.log('')
+client.user.setActivity("-help",{type: 'watching'})
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
   console.log(`[Start] ${new Date()}`);
@@ -32,21 +33,21 @@ client.on('message',async message => {
   let args = message.content.split(' ');
   if(args[0] === `-bc`) {
     if(!message.member.hasPermission("SEND_MESSAGES")) return message.channel.send('- **أنت لا تملك الصلاحيات اللازمة لأستخدام هذا الأمر**');
-    if(!args[1]) return message.channel.send('- **يجب عليك كتابة الرسالة بعد الأمر**');
+    if(!args[1]) return message.channel.send('- **please add your text after the command**');
  
     let msgCount = 0;
     let errorCount = 0;
     let successCount = 0;
-    message.channel.send(`**- [ :bookmark: :: ${msgCount} ] ・عدد الرسائل المرسلة**\n**- [ :inbox_tray: :: ${successCount} ] ・عدد الرسائل المستلمة**\n**- [ :outbox_tray: :: ${errorCount} ]・عدد الرسائل الغير مستلمة**`).then(msg => {
+    message.channel.send(`**- [ :bookmark: :: ${msgCount} ] ・Sent**\n**- [ :inbox_tray: :: ${successCount} ] ・Reserved **\n**- [ :outbox_tray: :: ${errorCount} ]・Blocked **`).then(msg => {
       message.guild.members.forEach(g => {
         g.send(args.slice(1).join(' ')).then(() => {
           successCount++;
           msgCount++;
-          msg.edit(`**- [ :bookmark: :: ${msgCount} ] ・عدد الرسائل المرسلة**\n**- [ :inbox_tray: :: ${successCount} ] ・عدد الرسائل المستلمة**\n**- [ :outbox_tray: :: ${errorCount} ]・عدد الرسائل الغير مستلمة**`);
+          msg.edit(`**- [ :bookmark: :: ${msgCount} ] ・Sent**\n**- [ :inbox_tray: :: ${successCount} ] ・Reserved **\n**- [ :outbox_tray: :: ${errorCount} ]・Blocked **`);
         }).catch(e => {
           errorCount++;
           msgCount++;
-          msg.edit(`**- [ :bookmark: :: ${msgCount} ] ・عدد الرسائل المرسلة**\n**- [ :inbox_tray: :: ${successCount} ] ・عدد الرسائل المستلمة**\n**- [ :outbox_tray: :: ${errorCount} ]・عدد الرسائل الغير مستلمة**`);
+          msg.edit(`**- [ :bookmark: :: ${msgCount} ] ・Sent**\n**- [ :inbox_tray: :: ${successCount} ] ・Reserved **\n**- [ :outbox_tray: :: ${errorCount} ]・Blocked**`);
         });
       });
     });
@@ -82,8 +83,7 @@ const BcList = new Discord.RichEmbed()
 .setDescription(`**برودكاست بـ امبد 📝\nبرودكاست بدون امبد✏ \nلديك دقيقه للأختيار قبل الغاء البرودكاست\nلكتابه اسم السيرفر اكتب في الرساله :[server]\nلكتابه اسم المراسل  اكتب في الرساله :[by]\nلكي يقوم  البوت بمنشن الاعضاء اكتب في الرساله :[user]**`)
 if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(BcList).then(msg => {
 msg.react('📝')
-.then(() => msg.react('✏'))
-.then(() =>msg.react('📝'))
+.then(() => msg.react('✏'))then(() =>msg.react('📝'))
  
 var EmbedBcFilter = (reaction, user) => reaction.emoji.name === '📝' && user.id === message.author.id;
 var NormalBcFilter = (reaction, user) => reaction.emoji.name === '✏' && user.id === message.author.id;
