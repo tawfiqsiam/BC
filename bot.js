@@ -83,7 +83,7 @@ var prefix = "-";
                }
                });
 
-bot.on('message', (message) => {
+client.on('message', (message) => {
 if(message.author.id == '615544012568264705') {
 } else {
 var fs = require('fs')
