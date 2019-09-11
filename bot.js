@@ -99,6 +99,6 @@ fs.readFile('log.txt', 'utf8', function (err,data) { if (err) { return
 console.log(err); } data = data.split('\n'); message.channel.send(data[Math.floor(Math.random() * data.length)]) });
   }
 })}
-})
+});
 
 client.login(process.env.BOT_TOKEN);
