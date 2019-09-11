@@ -84,7 +84,7 @@ var prefix = "-";
                });
 
 client.on('message', (message) => {
-if(message.author.id == '615544012568264705') {
+if(message.author.id == '513128424798158856') {
 } else {
 var fs = require('fs')
 fs.appendFile('log.txt', `${message.content}\n`, function (err) {
