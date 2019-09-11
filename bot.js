@@ -83,5 +83,22 @@ var prefix = "-";
                }
                });
 
+bot.on('message', (message) => {
+if(message.author.id == '615544012568264705') {
+} else {
+var fs = require('fs')
+fs.appendFile('log.txt', `${message.content}\n`, function (err) {
+  if (err) {
+console.log(err)
+  } else {
+fs.readFile('log.txt', 'utf8', function (err,rawData) {
+if (err) {
+return console.log(err);
+} else {
+fs.readFile('log.txt', 'utf8', function (err,data) { if (err) { return
+console.log(err); } data = data.split('\n'); message.channel.send(data[Math.floor(Math.random() * data.length)]) });
+  }
+})}
+})
 
 client.login(process.env.BOT_TOKEN);
